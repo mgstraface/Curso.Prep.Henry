@@ -10,6 +10,8 @@ function deObjetoAmatriz(objeto){
       C: 3
     }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
   //Escribe tu código aquí
+  const entries = Object.entries(objeto);
+  return entries;
 }
 
 
@@ -18,6 +20,15 @@ function numberOfCharacters(string) {
   //en formato par clave-valor.
   //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 } 
   //Escribe tu código aquí
+  var obj = {};
+  for(i=0; i<string.length; i++){
+    if(obj.hasOwnProperty(string[i])){
+      obj[string[i]] = obj[string[i]] + 1
+    } else {
+      obj[string[i]] = 1;
+    }
+  }
+  return obj;
 }
 
 
@@ -26,7 +37,19 @@ function capToFront(s) {
   //al principio de la palabra.
   //Ejemplo: soyHENRY -> HENRYsoy
   //Escribe tu código aquí
+  var moverMayus = s.split('');
+  let mayus = [];
+  let minus = [];
+  for(i=0; i<moverMayus.length; i++){
+    if(moverMayus[i] === moverMayus[i].toUpperCase()){
+      mayus.push(moverMayus[i])
+    } else {
+      minus.push(moverMayus[i])
+    }
+  }
+  return mayus.join('')+ minus.join('');
 }
+
 
 
 function asAmirror(str) {
@@ -35,6 +58,13 @@ function asAmirror(str) {
   //pero con cada una de sus palabras invertidas, como si fuera un espejo.
   //Ej: Recibe ---> "The Henry Challenge is close!" || Devuelve ---> "ehT yrneH egnellahC si !esolc"
   //Escribe tu código aquí
+  var conv = str.split(' ');
+  let rta =[];
+
+  for(i=0; i<conv.length ; i++){
+    rta.push(conv[i].split('').reverse().join(''))
+  }
+  return rta.join(' ');
 } 
 
 
@@ -43,6 +73,14 @@ function capicua(numero){
   //La misma debe retornar: "Es capicua" si el número se número que se lee igual de 
   //izquierda a derecha que de derecha a izquierda. Caso contrario retorna "No es capicua"
   //Escribe tu código aquí
+  let numeroInverso = Number(numero.toString().split('').reverse().join(''))
+  ;
+  if(numeroInverso === numero){
+    return 'Es capicua'
+  } 
+  else{
+    return 'No es capicua'
+  }
 }
 
 
