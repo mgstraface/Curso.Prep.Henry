@@ -31,20 +31,24 @@ img{
                 border: 12px solid black;
                 display: block;
                 margin-left: auto;
-                margin-right: auto;
+                margin-right: auto ;
+                margin-top: 15px;
         }
 #spanId{
         font-size: 18px;
-         margin: 50px;
          background-color: black;
          color: white;
          display: flex;
          justify-content: center;
-    }
-    a{
-        display: flex;
-        justify-content: center;
-    }
+         align-items: center;
+}
+a{
+    display: flex;
+    justify-content: center;
+}
+         
+
+   
 .divClass{
         background-color: black;
         color: white;
